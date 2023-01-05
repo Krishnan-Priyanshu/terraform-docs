@@ -1,0 +1,47 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dell Technologies – Storage</title>
+    <link>https://krunal-thakkar.github.io/terraform-docs/docs/storage/</link>
+    <description>Recent content in Storage on Dell Technologies</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://krunal-thakkar.github.io/terraform-docs/docs/storage/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Introduction</title>
+      <link>https://krunal-thakkar.github.io/terraform-docs/docs/storage/introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://krunal-thakkar.github.io/terraform-docs/docs/storage/introduction/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Platforms</title>
+      <link>https://krunal-thakkar.github.io/terraform-docs/docs/storage/platforms/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://krunal-thakkar.github.io/terraform-docs/docs/storage/platforms/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;../platforms/powerflex&#34;&gt;PowerFlex&lt;/a&gt;
+&lt;br&gt;Documentations for PowerFlex&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;../platforms/powerstore&#34;&gt;PowerStore&lt;/a&gt;
+&lt;br&gt;Documentations for PowerStore&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
