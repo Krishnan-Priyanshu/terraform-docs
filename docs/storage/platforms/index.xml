@@ -14,6 +14,25 @@
     
     
     <item>
+      <title>Docs: PowerFlex</title>
+      <link>https://krunal-thakkar.github.io/terraform-docs/docs/storage/platforms/powerflex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://krunal-thakkar.github.io/terraform-docs/docs/storage/platforms/powerflex/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;../powerflex/product_guide/&#34;&gt;Product Guide&lt;/a&gt;
+&lt;br&gt;PowerFlex Product Guide Documentation&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;../powerflex/readme/&#34;&gt;ReadMe&lt;/a&gt;
+&lt;br&gt;PowerFlex ReadMe Documentation&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;../powerflex/release_notes/&#34;&gt;Release Notes&lt;/a&gt;
+&lt;br&gt;PowerFlex Release Notes Documentation&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: PowerStore</title>
       <link>https://krunal-thakkar.github.io/terraform-docs/docs/storage/platforms/powerstore/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -943,240 +962,6 @@ location_history, type_l10n, state_l10n, node_affinity_l10n, app_type_l10n are n
 &lt;li&gt;high_water_mark is present only in instance of create storage container as per swagger ui, so it cannot be modified&lt;/li&gt;
 &lt;li&gt;mount , datastore_name are not taken as doc is not upto the mark with the server implementation&lt;/li&gt;
 &lt;/ol&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: PowerFlex</title>
-      <link>https://krunal-thakkar.github.io/terraform-docs/docs/storage/platforms/powerflex/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://krunal-thakkar.github.io/terraform-docs/docs/storage/platforms/powerflex/</guid>
-      <description>
-        
-        
-        &lt;h1 id=&#34;terraform-modules-for-dell-powerflex&#34;&gt;Terraform Modules for Dell PowerFlex&lt;/h1&gt;
-&lt;!-- © 2021 Dell Inc. or its subsidiaries. All rights reserved. Dell, and other trademarks are trademarks of Dell Inc. or its subsidiaries. Other trademarks may be trademarks of their respective owners. --&gt;
-&lt;hr&gt;
-&lt;h1 id=&#34;contents&#34;&gt;Contents&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#volume-resource&#34;&gt;Volume Resource&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#list-of-parameters&#34;&gt;List Of Parameters&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#examples&#34;&gt;Examples&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#notes&#34;&gt;Notes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#sdc-resource&#34;&gt;SDC Resource&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#list-of-parameters-1&#34;&gt;List Of Parameters&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#examples-1&#34;&gt;Examples&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#notes-1&#34;&gt;Notes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#sdc-datasource-resource&#34;&gt;SDC Datasource Resource&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#list-of-parameters-2&#34;&gt;List Of Parameters&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#examples-2&#34;&gt;Examples&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#notes-2&#34;&gt;Notes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#storage-pool-resource&#34;&gt;Storage Pool Resource&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#list-of-parameters-3&#34;&gt;List Of Parameters&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#examples-3&#34;&gt;Examples&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#notes-3&#34;&gt;Notes&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;volume-resource&#34;&gt;Volume Resource&lt;/h2&gt;
-&lt;p&gt;Details about volume resource&lt;/p&gt;
-&lt;h3 id=&#34;list-of-parameters&#34;&gt;List Of Parameters&lt;/h3&gt;
-&lt;table&gt;
-    &lt;thead&gt;
-    &lt;tr&gt;
-        &lt;th&gt;
-            &lt;div&gt;Parameter Name&lt;/div&gt;
-        &lt;/th&gt;
-        &lt;th&gt;
-            &lt;div&gt;Description&lt;/div&gt;
-        &lt;/th&gt;
-        &lt;th&gt;
-            &lt;div&gt;Required/Optional/Computed&lt;/div&gt;
-        &lt;/th&gt;
-        &lt;th&gt;
-            &lt;div&gt;Type&lt;/div&gt;
-        &lt;/th&gt;
-        &lt;th&gt;
-            &lt;div&gt;Default Value&lt;/div&gt;
-        &lt;/th&gt;
-        &lt;th&gt;
-            &lt;div&gt;Choices&lt;/div&gt;
-        &lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-    &lt;tr&gt;
-        &lt;td&gt;id&lt;/td&gt;
-        &lt;td&gt;Volume ID&lt;/td&gt;
-        &lt;td&gt;Required&lt;/td&gt;
-        &lt;td&gt;string&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;name&lt;/td&gt;
-        &lt;td&gt;Volume Name&lt;/td&gt;
-        &lt;td&gt;Required&amp;nbsp;&lt;/td&gt;
-        &lt;td&gt;string&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;volumeType&lt;/td&gt;
-        &lt;td&gt;Volume Type&amp;nbsp;&lt;/td&gt;
-        &lt;td&gt;Optional&lt;/td&gt;
-        &lt;td&gt;string&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;storagePoolId&lt;/td&gt;
-        &lt;td&gt;Storage Pool ID&amp;nbsp;&lt;/td&gt;
-        &lt;td&gt;Required&lt;/td&gt;
-        &lt;td&gt;String&amp;nbsp;&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;compressionMethod&lt;/td&gt;
-        &lt;td&gt;Compression Method&lt;/td&gt;
-        &lt;td&gt;Optional&lt;/td&gt;
-        &lt;td&gt;string&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;dataLayout&lt;/td&gt;
-        &lt;td&gt;Data Layout&amp;nbsp;&lt;/td&gt;
-        &lt;td&gt;Optional&lt;/td&gt;
-        &lt;td&gt;string&amp;nbsp;&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;sizeInKb&lt;/td&gt;
-        &lt;td&gt;Size of volume in kb&lt;/td&gt;
-        &lt;td&gt;Required&amp;nbsp;&lt;/td&gt;
-        &lt;td&gt;string&amp;nbsp;&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;mappedSdcInfo&lt;/td&gt;
-        &lt;td&gt;Sdc mapped to volume&lt;/td&gt;
-        &lt;td&gt;Optional&lt;/td&gt;
-        &lt;td&gt;list&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;sizeInGB&lt;/td&gt;
-        &lt;td&gt;New volume size in GB. Basic allocation granularity is 8 GB.
-        &lt;/td&gt;
-        &lt;td&gt;Optional&lt;/td&gt;
-        &lt;td&gt;string&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;volumeClass&lt;/td&gt;
-        &lt;td&gt;Enter the matching volume class to execute this command if volume is managed externally.
-        &lt;/td&gt;
-        &lt;td&gt;Optional&lt;/td&gt;
-        &lt;td&gt;bool&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;newName&lt;/td&gt;
-        &lt;td&gt;New name to assign to the Volume&lt;/td&gt;
-        &lt;td&gt;Required&lt;/td&gt;
-        &lt;td&gt;string&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;removeMode&lt;/td&gt;
-        &lt;td&gt;Specify the removal mode: ONLY_ME - only the specified volume, INCLUDING_DESCENDANTS - the specified volume
-            and its descendants, DESCENDANTS_ONLY - only the descendants of the specified volume, but not the volume
-            itself, or WHOLE_VTREE - the entire V-Tree of the specified volume.
-        &lt;/td&gt;
-        &lt;td&gt;Required&lt;/td&gt;
-        &lt;td&gt;string&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;hostId&lt;/td&gt;
-        &lt;td&gt;NVMe Host ID or SDC ID&lt;/td&gt;
-        &lt;td&gt;Required&lt;/td&gt;
-        &lt;td&gt;string&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;UseRmCache&lt;/td&gt;
-        &lt;td&gt;Enable rm cache&lt;/td&gt;
-        &lt;td&gt;Optional&lt;/td&gt;
-        &lt;td&gt;bool&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;mappingToAllSdcsEnabled&lt;/td&gt;
-        &lt;td&gt;mapping to all sdcs enabled&lt;/td&gt;
-        &lt;td&gt;Optional&lt;/td&gt;
-        &lt;td&gt;bool&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;vtreeId&lt;/td&gt;
-        &lt;td&gt;Id of V-Tree for snapshot group&lt;/td&gt;
-        &lt;td&gt;Optional&lt;/td&gt;
-        &lt;td&gt;string&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;/tbody&gt;
-    &lt;thead&gt;
-    &lt;tr&gt;
-        &lt;th&gt;
-            &lt;div&gt;Parameter Name&lt;/div&gt;
-        &lt;/th&gt;
-        &lt;th&gt;
-            &lt;div&gt;Description&lt;/div&gt;
-        &lt;/th&gt;
-        &lt;th&gt;
-            &lt;div&gt;Required/Optional/Computed&lt;/div&gt;
-        &lt;/th&gt;
-        &lt;th&gt;
-            &lt;div&gt;Type&lt;/div&gt;
-        &lt;/th&gt;
-        &lt;th&gt;
-            &lt;div&gt;Default Value&lt;/div&gt;
-        &lt;/th&gt;
-        &lt;th&gt;
-            &lt;div&gt;Choices&lt;/div&gt;
-        &lt;/th&gt;
-    &lt;/tr&gt;
-    &lt;/thead&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;examples&#34;&gt;Examples&lt;/h3&gt;
-&lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
 
       </description>
     </item>

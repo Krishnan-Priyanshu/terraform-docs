@@ -26,5 +26,1119 @@
       </description>
     </item>
     
+    <item>
+      <title>Docs: Support</title>
+      <link>https://krunal-thakkar.github.io/terraform-docs/docs/storage/support/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://krunal-thakkar.github.io/terraform-docs/docs/storage/support/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Licensing</title>
+      <link>https://krunal-thakkar.github.io/terraform-docs/docs/storage/licensing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://krunal-thakkar.github.io/terraform-docs/docs/storage/licensing/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: ReadMe</title>
+      <link>https://krunal-thakkar.github.io/terraform-docs/docs/storage/platforms/powerflex/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://krunal-thakkar.github.io/terraform-docs/docs/storage/platforms/powerflex/readme/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Release Notes</title>
+      <link>https://krunal-thakkar.github.io/terraform-docs/docs/storage/platforms/powerflex/release_notes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://krunal-thakkar.github.io/terraform-docs/docs/storage/platforms/powerflex/release_notes/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Product Guide</title>
+      <link>https://krunal-thakkar.github.io/terraform-docs/docs/storage/platforms/powerflex/product_guide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://krunal-thakkar.github.io/terraform-docs/docs/storage/platforms/powerflex/product_guide/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;terraform-modules-for-dell-powerflex&#34;&gt;Terraform Modules for Dell PowerFlex&lt;/h1&gt;
+&lt;!-- © 2021 Dell Inc. or its subsidiaries. All rights reserved. Dell, and other trademarks are trademarks of Dell Inc. or its subsidiaries. Other trademarks may be trademarks of their respective owners. --&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;contents&#34;&gt;Contents&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#volume-resource&#34;&gt;Volume Resource&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#synopsis&#34;&gt;Synopsis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#list-of-parameters&#34;&gt;List Of Parameters&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#examples&#34;&gt;Examples&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#notes&#34;&gt;Notes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sdc-resource&#34;&gt;SDC Resource&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#synopsis-1&#34;&gt;Synopsis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#list-of-parameters-1&#34;&gt;List Of Parameters&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#examples-1&#34;&gt;Examples&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#notes-1&#34;&gt;Notes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sdc-datasource-resource&#34;&gt;SDC Datasource Resource&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#synopsis-2&#34;&gt;Synopsis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#list-of-parameters-2&#34;&gt;List Of Parameters&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#examples-2&#34;&gt;Examples&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#notes-2&#34;&gt;Notes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#storage-pool-resource&#34;&gt;Storage Pool Resource&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#synopsis-3&#34;&gt;Synopsis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#list-of-parameters-3&#34;&gt;List Of Parameters&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#examples-3&#34;&gt;Examples&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#notes-3&#34;&gt;Notes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#snapshot-resource&#34;&gt;Snapshot Resource&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#synopsis-4&#34;&gt;Synopsis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#list-of-parameters-4&#34;&gt;List Of Parameters&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#examples-4&#34;&gt;Examples&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#notes-4&#34;&gt;Notes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#sds-resource&#34;&gt;SDS Resource&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#synopsis-5&#34;&gt;Synopsis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#list-of-parameters-5&#34;&gt;List Of Parameters&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#examples-5&#34;&gt;Examples&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#notes-5&#34;&gt;Notes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;volume-resource&#34;&gt;Volume Resource&lt;/h2&gt;
+&lt;p&gt;Manage volumes on Dell EMC PowerFlex&lt;/p&gt;
+&lt;h3 id=&#34;synopsis&#34;&gt;Synopsis&lt;/h3&gt;
+&lt;p&gt;Managing volumes on PowerFlex storage system includes creating new volume, mapping/unmapping volume to/from SDC, modifying attributes of volume and deleting volume.&lt;/p&gt;
+&lt;h3 id=&#34;list-of-parameters&#34;&gt;List Of Parameters&lt;/h3&gt;
+&lt;table&gt;
+    &lt;thead&gt;
+    &lt;tr&gt;
+        &lt;th&gt;
+            &lt;div&gt;Parameter Name&lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div&gt;Description&lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div&gt;Required/Optional/Computed&lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div&gt;Type&lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div&gt;Default Value&lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div&gt;Choices&lt;/div&gt;
+        &lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+    &lt;tr&gt;
+        &lt;td&gt;name&lt;/td&gt;
+        &lt;td&gt;The Name of the Volume.&lt;/td&gt;
+        &lt;td&gt;Required&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;storage_pool_id&lt;/td&gt;
+        &lt;td&gt;Storage Pool id.&lt;/td&gt;
+        &lt;td&gt;Optioanl And Computed&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;storage_pool_name&lt;/td&gt;
+        &lt;td&gt;Storage Pool Name.&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;protection_domain_id&lt;/td&gt;
+        &lt;td&gt;Protection Domain ID.&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;String&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;protection_domain_name&lt;/td&gt;
+        &lt;td&gt;Protection Domain Name.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;size&lt;/td&gt;
+        &lt;td&gt;Size of the Volume.&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;Required&lt;/td&gt;
+        &lt;td&gt;int64&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;capacity_unit&lt;/td&gt;
+        &lt;td&gt;The unit of the volume size.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;string&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;GB&lt;/td&gt;
+        &lt;td&gt;&lt;ul&gt;
+        &lt;li&gt;GB&lt;/li&gt;
+        &lt;li&gt;TB&lt;/li&gt;
+        &lt;/ul&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;volume_type&lt;/td&gt;
+        &lt;td&gt;Type of volume provisioning.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;ThinProvisioned&lt;/td&gt;
+        &lt;td&gt;&lt;ul&gt;
+        &lt;li&gt;ThickProvisioned&lt;/li&gt;
+        &lt;li&gt;ThinProvisioned&lt;/li&gt;
+        &lt;/ul&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;use_rm_cache&lt;/td&gt;
+        &lt;td&gt;Whether to use RM Cache or not.
+        &lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;bool&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;compression_method&lt;/td&gt;
+        &lt;td&gt;Type of the compression method.
+        &lt;/td&gt;
+        &lt;td&gt;Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;ul&gt;
+        &lt;li&gt;None&lt;/li&gt;
+        &lt;li&gt;Normal&lt;/li&gt;
+        &lt;/ul&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;id&lt;/td&gt;
+        &lt;td&gt;The ID of the volume.&lt;/td&gt;
+        &lt;td&gt;Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;size_in_kb&lt;/td&gt;
+        &lt;td&gt;Size in KB.
+        &lt;/td&gt;
+        &lt;td&gt;Computed&lt;/td&gt;
+        &lt;td&gt;int64&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;access_mode&lt;/td&gt;
+        &lt;td&gt;The Access mode of Volume.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;ReadOnly&lt;/td&gt;
+        &lt;td&gt;&lt;ul&gt;
+        &lt;li&gt;ReadOnly&lt;/li&gt;
+        &lt;li&gt;ReadWrite&lt;/li&gt;
+        &lt;/ul&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;remove_mode&lt;/td&gt;
+        &lt;td&gt;remove mode of Volume.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;ONLY_ME&lt;/td&gt;
+        &lt;td&gt;&lt;ul&gt;
+        &lt;li&gt;ONLY_ME&lt;/li&gt;
+        &lt;li&gt;INCLUDING_DESCENDANTS&lt;/li&gt;
+        &lt;/ul&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;sdc_list&lt;/td&gt;
+        &lt;td&gt;mapped sdc info.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;list&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;emsp;&amp;emsp;sdc_id&lt;/td&gt;
+        &lt;td&gt;The ID of the SDC.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;emsp;&amp;emsp;sdc_name&lt;/td&gt;
+        &lt;td&gt;The Name of the SDC.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+     &lt;tr&gt;
+        &lt;td&gt;&amp;emsp;&amp;emsp;limit_iops&lt;/td&gt;
+        &lt;td&gt;Limit of volume IOPS.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;int64&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+     &lt;tr&gt;
+        &lt;td&gt;&amp;emsp;&amp;emsp;limit_bw_in_mbps&lt;/td&gt;
+        &lt;td&gt;Limit of volume network bandwidth.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;int64&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;emsp;&amp;emsp;access_mode&lt;/td&gt;
+        &lt;td&gt;Define the access mode for all mappings of the volume.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;ReadOnly&lt;/td&gt;
+        &lt;td&gt;&lt;ul&gt;
+        &lt;li&gt;ReadOnly&lt;/li&gt;
+        &lt;li&gt;ReadWrite&lt;/li&gt;
+        &lt;li&gt;NoAccess&lt;/li&gt;
+        &lt;/ul&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;examples&#34;&gt;Examples&lt;/h3&gt;
+&lt;pre&gt;
+    &lt;code&gt;
+        resource &#34;powerflex_volume&#34; &#34;avengers-volume-create&#34;{
+        name = &#34;avengers-volume-create&#34;
+        protection_domain_name = &#34;domain1&#34;
+        storage_pool_name = &#34;pool1&#34; 
+        size = 8
+        use_rm_cache = true 
+        volume_type = &#34;ThickProvisioned&#34; 
+        access_mode = &#34;ReadWrite&#34;
+        sdc_list = [
+        {
+                sdc_name = &#34;LGLW6092&#34;
+                limit_iops = 119
+                limit_bw_in_mbps = 19
+                access_mode = &#34;ReadOnly&#34;
+                },
+            ]   
+        }
+    &lt;/code&gt;
+&lt;/pre&gt;
+&lt;h3 id=&#34;notes&#34;&gt;Notes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt; Volume name is unique across the PowerFlex array.&lt;/li&gt;
+&lt;li&gt; Either name or the id of the storage pool is required for creating / modifying a volume.&lt;/li&gt;
+&lt;li&gt; Either name or the id of the protection domain is required for creating / modifying a volume.&lt;/li&gt;
+&lt;li&gt; Size of the volume should be a multiple of 8.&lt;/li&gt;
+&lt;li&gt; specify 0 for unlimited iops..&lt;/li&gt;
+&lt;li&gt; To set no limit over bandwidth, 0 is to be passed.&lt;/li&gt;
+&lt;li&gt; Specify either sdc_name or sdc_id.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;sdc-resource&#34;&gt;SDC Resource&lt;/h2&gt;
+&lt;p&gt;Manage SDCs on Dell EMC PowerFlex&lt;/p&gt;
+&lt;h3 id=&#34;synopsis-1&#34;&gt;Synopsis&lt;/h3&gt;
+&lt;p&gt;Managing SDCs on PowerFlex storage system includes importing details of SDC and renaming SDC&lt;/p&gt;
+&lt;h3 id=&#34;list-of-parameters-1&#34;&gt;List Of Parameters&lt;/h3&gt;
+&lt;table&gt;
+    &lt;thead&gt;
+    &lt;tr&gt;
+        &lt;th&gt;
+            &lt;div&gt;Parameter Name&lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div&gt;Description&lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div&gt;Required/Optional/Computed&lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div&gt;Type&lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div&gt;Default Value&lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div&gt;Choices&lt;/div&gt;
+        &lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+    &lt;tr&gt;
+        &lt;td&gt;id&lt;/td&gt;
+        &lt;td&gt;SDC ID.&lt;/td&gt;
+        &lt;td&gt;Required&lt;/td&gt;
+        &lt;td&gt;String&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;last_updated&lt;/td&gt;
+        &lt;td&gt;Last updated timestamp.&lt;/td&gt;
+        &lt;td&gt;Computed&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;name&lt;/td&gt;
+        &lt;td&gt;SDC Name.&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;Required&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;sdc_guid&lt;/td&gt;
+        &lt;td&gt;SDC GUID.&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;Computed&lt;/td&gt;
+        &lt;td&gt;String&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;on_vmware&lt;/td&gt;
+        &lt;td&gt;Presence on VMware.&lt;/td&gt;
+        &lt;td&gt;Computed&lt;/td&gt;
+        &lt;td&gt;bool&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;sdc_approved&lt;/td&gt;
+        &lt;td&gt;Indicates whether an SDC has approved access to the system.&lt;/td&gt;
+        &lt;td&gt;Computed&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;bool&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;system_id&lt;/td&gt;
+        &lt;td&gt;ID of the System.&lt;/td&gt;
+        &lt;td&gt;Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;  
+    &lt;tr&gt;
+        &lt;td&gt;sdc_ip&lt;/td&gt;
+        &lt;td&gt;IP of the SDC.&lt;/td&gt;
+        &lt;td&gt;Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt; 
+    &lt;tr&gt;
+        &lt;td&gt;mdm_connection_state&lt;/td&gt;
+        &lt;td&gt;MDM connection state.&lt;/td&gt;
+        &lt;td&gt;Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt; 
+    &lt;tr&gt;
+        &lt;td&gt;links&lt;/td&gt;
+        &lt;td&gt;Underlying REST API links.&lt;/td&gt;
+        &lt;td&gt;Computed&lt;/td&gt;
+        &lt;td&gt;List&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt; 
+    &lt;tr&gt;
+        &lt;td&gt;&amp;emsp;&amp;emsp;rel&lt;/td&gt;
+        &lt;td&gt;Specifies the relationship with the SDC.&lt;/td&gt;
+        &lt;td&gt;Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt; 
+    &lt;tr&gt;
+        &lt;td&gt;&amp;emsp;&amp;emsp;href&lt;/td&gt;
+        &lt;td&gt;Specifies the exact path to fetch the details.&lt;/td&gt;
+        &lt;td&gt;Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;  
+    &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;examples-1&#34;&gt;Examples&lt;/h3&gt;
+&lt;pre&gt;
+    &lt;code&gt;
+        resource &#34;powerflex_sdc&#34; &#34;sdc&#34; {
+            id = &#34;c423b09800000003&#34;
+            name = &#34;powerflex_sdc26&#34;
+        }
+    &lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2 id=&#34;storage-pool-resource&#34;&gt;Storage Pool Resource&lt;/h2&gt;
+&lt;p&gt;Managing Dell EMC PowerFlex storage pool&lt;/p&gt;
+&lt;h3 id=&#34;synopsis-2&#34;&gt;Synopsis&lt;/h3&gt;
+&lt;p&gt;Dell EMC PowerFlex storage pool module includes creating a new storage pool, and modifying the attributes of a storage pool.&lt;/p&gt;
+&lt;h3 id=&#34;list-of-parameters-2&#34;&gt;List Of Parameters&lt;/h3&gt;
+&lt;table&gt;
+    &lt;thead&gt;
+    &lt;tr&gt;
+        &lt;th&gt;
+            &lt;div&gt;Parameter Name&lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div&gt;Description&lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div&gt;Required/Optional/Computed&lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div&gt;Type&lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div&gt;Default Value&lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div&gt;Choices&lt;/div&gt;
+        &lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+    &lt;tr&gt;
+        &lt;td&gt;id&lt;/td&gt;
+        &lt;td&gt;ID of the Storage pool.&lt;/td&gt;
+        &lt;td&gt;Computed&lt;/td&gt;
+        &lt;td&gt;String&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;protection_domain_id&lt;/td&gt;
+        &lt;td&gt;ID of the Protection domain.&lt;/td&gt;
+        &lt;td&gt;Optional&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;protection_domain_name&lt;/td&gt;
+        &lt;td&gt;Name of the Protection domain.&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;Optional&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;name&lt;/td&gt;
+        &lt;td&gt;Name of the Storage pool.&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;Required&lt;/td&gt;
+        &lt;td&gt;String&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;media_type&lt;/td&gt;
+        &lt;td&gt;Type of devices in the storage pool.&lt;/td&gt;
+        &lt;td&gt;Required&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;ul&gt;
+        &lt;li&gt;HDD&lt;/li&gt;
+        &lt;li&gt;SSD&lt;/li&gt;
+        &lt;li&gt;Transitional&lt;/li&gt;
+        &lt;/ul&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;use_rmcache&lt;/td&gt;
+        &lt;td&gt;Enable/Disable RMcache on a specific storage pool.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;bool&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;use_rfcache&lt;/td&gt;
+        &lt;td&gt;Enable/Disable RFcache on a specific storage pool.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;bool&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;   
+    &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;examples-2&#34;&gt;Examples&lt;/h3&gt;
+&lt;pre&gt;
+    &lt;code&gt;
+        resource &#34;powerflex_storagepool&#34; &#34;storagepool&#34; {
+            name = &#34;storagepool3&#34;
+            protection_domain_id = &#34;4eeb304600000000&#34;
+            media_type = &#34;HDD&#34;
+            use_rmcache = true
+            use_rfcache = false
+}
+    &lt;/code&gt;
+&lt;/pre&gt;
+&lt;h3 id=&#34;notes-1&#34;&gt;Notes&lt;/h3&gt;
+&lt;ul&gt;
+        &lt;li&gt;Either protection_domain_id or protection_domain_name is required in order to create / modify storage pool.&lt;/li&gt;
+        &lt;li&gt;Transitional media type is supported only during modification.&lt;/li&gt;
+ &lt;/ul&gt;
+&lt;h2 id=&#34;snapshot-resource&#34;&gt;Snapshot Resource&lt;/h2&gt;
+&lt;p&gt;Details about snapshot resource&lt;/p&gt;
+&lt;h3 id=&#34;synopsis-3&#34;&gt;Synopsis&lt;/h3&gt;
+&lt;p&gt;Managing snapshots on PowerFlex storage system includes creating snapshot for a volume,modifying attributes of snapshot and deleting snapshot.&lt;/p&gt;
+&lt;h3 id=&#34;list-of-parameters-3&#34;&gt;List Of Parameters&lt;/h3&gt;
+&lt;table&gt;
+    &lt;thead&gt;
+    &lt;tr&gt;
+        &lt;th&gt;
+            &lt;div&gt;Parameter Name&lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div&gt;Description&lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div&gt;Required/Optional/Computed&lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div&gt;Type&lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div&gt;Default Value&lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div&gt;Choices&lt;/div&gt;
+        &lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+    &lt;tr&gt;
+        &lt;td&gt;name&lt;/td&gt;
+        &lt;td&gt;The name of the snapshot.&lt;/td&gt;
+        &lt;td&gt;Required&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;volume_id&lt;/td&gt;
+        &lt;td&gt;The volume id for which snapshot is created.&lt;/td&gt;
+        &lt;td&gt;Optioanl And Computed&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;volume_name&lt;/td&gt;
+        &lt;td&gt;The volume name for which snapshot is created.&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+        &lt;tr&gt;
+        &lt;td&gt;access_mode&lt;/td&gt;
+        &lt;td&gt;The Access mode of snapshot.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;ReadOnly&lt;/td&gt;
+        &lt;td&gt;&lt;ul&gt;
+        &lt;li&gt;ReadOnly&lt;/li&gt;
+        &lt;li&gt;ReadWrite&lt;/li&gt;
+        &lt;/ul&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+        &lt;tr&gt;
+        &lt;td&gt;id&lt;/td&gt;
+        &lt;td&gt;The ID of the snapshot.&lt;/td&gt;
+        &lt;td&gt;Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;size&lt;/td&gt;
+        &lt;td&gt;Size of the snapshot.&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;int64&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;capacity_unit&lt;/td&gt;
+        &lt;td&gt;The unit of the snapshot size.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;string&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;GB&lt;/td&gt;
+        &lt;td&gt;&lt;ul&gt;
+        &lt;li&gt;GB&lt;/li&gt;
+        &lt;li&gt;TB&lt;/li&gt;
+        &lt;/ul&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+        &lt;tr&gt;
+        &lt;td&gt;size_in_kb&lt;/td&gt;
+        &lt;td&gt;Size in KB.
+        &lt;/td&gt;
+        &lt;td&gt;Computed&lt;/td&gt;
+        &lt;td&gt;int64&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;lock_auto_snapshot&lt;/td&gt;
+        &lt;td&gt;lock auto snapshot.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;bool&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;desired_retention&lt;/td&gt;
+        &lt;td&gt;desired retention of snapshot.
+        &lt;/td&gt;
+        &lt;td&gt;Optional&lt;/td&gt;
+        &lt;td&gt;int64&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;retention_unit&lt;/td&gt;
+        &lt;td&gt;retention unit of snapshot.
+        &lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;hours&lt;/td&gt;
+        &lt;td&gt;&lt;ul&gt;
+        &lt;li&gt;hours&lt;/li&gt;
+        &lt;li&gt;days&lt;/li&gt;
+        &lt;/ul&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;retention_in_min&lt;/td&gt;
+        &lt;td&gt;retention of snapshot in min.
+        &lt;/td&gt;
+        &lt;td&gt;Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;remove_mode&lt;/td&gt;
+        &lt;td&gt;remove mode of snapshot.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;ONLY_ME&lt;/td&gt;
+        &lt;td&gt;&lt;ul&gt;
+        &lt;li&gt;ONLY_ME&lt;/li&gt;
+        &lt;li&gt;INCLUDING_DESCENDANTS&lt;/li&gt;
+        &lt;/ul&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;sdc_list&lt;/td&gt;
+        &lt;td&gt;mapped sdc info.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;list&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;emsp;&amp;emsp;sdc_id&lt;/td&gt;
+        &lt;td&gt;The ID of the SDC.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;emsp;&amp;emsp;sdc_name&lt;/td&gt;
+        &lt;td&gt;The Name of the SDC.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+     &lt;tr&gt;
+        &lt;td&gt;&amp;emsp;&amp;emsp;limit_iops&lt;/td&gt;
+        &lt;td&gt;Limit of volume IOPS.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;int64&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+     &lt;tr&gt;
+        &lt;td&gt;&amp;emsp;&amp;emsp;limit_bw_in_mbps&lt;/td&gt;
+        &lt;td&gt;Limit of volume network bandwidth.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;int64&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;emsp;&amp;emsp;access_mode&lt;/td&gt;
+        &lt;td&gt;Define the access mode for all mappings of the volume.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;ReadOnly&lt;/td&gt;
+        &lt;td&gt;&lt;ul&gt;
+        &lt;li&gt;ReadOnly&lt;/li&gt;
+        &lt;li&gt;ReadWrite&lt;/li&gt;
+        &lt;li&gt;NoAccess&lt;/li&gt;
+        &lt;/ul&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;examples-3&#34;&gt;Examples&lt;/h3&gt;
+&lt;pre&gt;
+    &lt;code&gt;
+        resource &#34;powerflex_snapshot&#34; &#34;snapshots-create-access-mode-sdc-map&#34; {
+            name = &#34;snapshots-create-epsilon&#34;
+            volume_id = &#34;4577c84000000120&#34;
+            access_mode = &#34;ReadWrite&#34;
+            size = 16
+            capacity_unit = &#34;GB&#34;
+            remove_mode = &#34;INCLUDING_DESCENDANTS&#34;
+            sdc_list = [
+                {	
+                    sdc_id = &#34;c423b09900000004&#34;
+                    limit_iops = 150
+                    limit_bw_in_mbps = 20
+                    access_mode = &#34;ReadWrite&#34;
+                },
+            ]
+        }
+    &lt;/code&gt;
+&lt;/pre&gt;
+&lt;h3 id=&#34;examples-4&#34;&gt;Examples&lt;/h3&gt;
+&lt;pre&gt;
+    &lt;code&gt;
+        resource &#34;powerflex_snapshot&#34; &#34;snapshots-create-access-mode-sdc-map&#34; {
+            name = &#34;snapshots-create-epsilon&#34;
+            volume_id = &#34;4577c84000000120&#34;
+            access_mode = &#34;ReadWrite&#34;
+            size = 16
+            capacity_unit = &#34;GB&#34;
+            remove_mode = &#34;INCLUDING_DESCENDANTS&#34;
+            sdc_list = [
+                {	
+                    sdc_id = &#34;c423b09900000004&#34;
+                    limit_iops = 150
+                    limit_bw_in_mbps = 20
+                    access_mode = &#34;ReadWrite&#34;
+                },
+            ]
+        }
+    &lt;/code&gt;
+&lt;/pre&gt;
+&lt;h3 id=&#34;notes-2&#34;&gt;Notes&lt;/h3&gt;
+&lt;ul&gt;
+        &lt;li&gt;Either volume_id or volume_name is required in order to create / modify snapshot.&lt;/li&gt;
+        &lt;li&gt; Size of the volume should be a multiple of 8.&lt;/li&gt;
+        &lt;li&gt; specify 0 for unlimited iops..&lt;/li&gt;
+        &lt;li&gt; To set no limit over bandwidth, 0 is to be passed.&lt;/li&gt;
+        &lt;li&gt; Specify either sdc_name or sdc_id.&lt;/li&gt;
+ &lt;/ul&gt;
+&lt;h2 id=&#34;sds-resource&#34;&gt;SDS Resource&lt;/h2&gt;
+&lt;p&gt;Manage SDS on Dell EMC PowerFlex&lt;/p&gt;
+&lt;h3 id=&#34;synopsis-4&#34;&gt;Synopsis&lt;/h3&gt;
+&lt;p&gt;Managing SDS on PowerFlex storage system includes creating new SDS, adding/removing IP and role to/from SDS, modifying attributes of SDS, and deleting SDS.&lt;/p&gt;
+&lt;h3 id=&#34;list-of-parameters-4&#34;&gt;List Of Parameters&lt;/h3&gt;
+&lt;table&gt;
+    &lt;thead&gt;
+    &lt;tr&gt;
+        &lt;th&gt;
+            &lt;div&gt;Parameter Name&lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div&gt;Description&lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div&gt;Required/Optional/Computed&lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div&gt;Type&lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div&gt;Default Value&lt;/div&gt;
+        &lt;/th&gt;
+        &lt;th&gt;
+            &lt;div&gt;Choices&lt;/div&gt;
+        &lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+    &lt;tr&gt;
+        &lt;td&gt;id&lt;/td&gt;
+        &lt;td&gt;The id of the SDS.&lt;/td&gt;
+        &lt;td&gt;Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;protection_domain_id&lt;/td&gt;
+        &lt;td&gt;Protection domain id.&lt;/td&gt;
+        &lt;td&gt;Optioanl&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;protection_domain_name&lt;/td&gt;
+        &lt;td&gt;Protection domain name.&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;Optional&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+        &lt;tr&gt;
+        &lt;td&gt;access_mode&lt;/td&gt;
+        &lt;td&gt;The Access mode of snapshot.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;ReadOnly&lt;/td&gt;
+        &lt;td&gt;&lt;ul&gt;
+        &lt;li&gt;ReadOnly&lt;/li&gt;
+        &lt;li&gt;ReadWrite&lt;/li&gt;
+        &lt;/ul&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+        &lt;tr&gt;
+        &lt;td&gt;id&lt;/td&gt;
+        &lt;td&gt;The ID of the snapshot.&lt;/td&gt;
+        &lt;td&gt;Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;size&lt;/td&gt;
+        &lt;td&gt;Size of the snapshot.&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;int64&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;capacity_unit&lt;/td&gt;
+        &lt;td&gt;The unit of the snapshot size.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;string&amp;nbsp;&lt;/td&gt;
+        &lt;td&gt;GB&lt;/td&gt;
+        &lt;td&gt;&lt;ul&gt;
+        &lt;li&gt;GB&lt;/li&gt;
+        &lt;li&gt;TB&lt;/li&gt;
+        &lt;/ul&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+        &lt;tr&gt;
+        &lt;td&gt;size_in_kb&lt;/td&gt;
+        &lt;td&gt;Size in KB.
+        &lt;/td&gt;
+        &lt;td&gt;Computed&lt;/td&gt;
+        &lt;td&gt;int64&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;lock_auto_snapshot&lt;/td&gt;
+        &lt;td&gt;lock auto snapshot.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;bool&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;desired_retention&lt;/td&gt;
+        &lt;td&gt;desired retention of snapshot.
+        &lt;/td&gt;
+        &lt;td&gt;Optional&lt;/td&gt;
+        &lt;td&gt;int64&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;retention_unit&lt;/td&gt;
+        &lt;td&gt;retention unit of snapshot.
+        &lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;hours&lt;/td&gt;
+        &lt;td&gt;&lt;ul&gt;
+        &lt;li&gt;hours&lt;/li&gt;
+        &lt;li&gt;days&lt;/li&gt;
+        &lt;/ul&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;retention_in_min&lt;/td&gt;
+        &lt;td&gt;retention of snapshot in min.
+        &lt;/td&gt;
+        &lt;td&gt;Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;remove_mode&lt;/td&gt;
+        &lt;td&gt;remove mode of snapshot.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;ONLY_ME&lt;/td&gt;
+        &lt;td&gt;&lt;ul&gt;
+        &lt;li&gt;ONLY_ME&lt;/li&gt;
+        &lt;li&gt;INCLUDING_DESCENDANTS&lt;/li&gt;
+        &lt;/ul&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;sdc_list&lt;/td&gt;
+        &lt;td&gt;mapped sdc info.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;list&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;emsp;&amp;emsp;sdc_id&lt;/td&gt;
+        &lt;td&gt;The ID of the SDC.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;emsp;&amp;emsp;sdc_name&lt;/td&gt;
+        &lt;td&gt;The Name of the SDC.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+     &lt;tr&gt;
+        &lt;td&gt;&amp;emsp;&amp;emsp;limit_iops&lt;/td&gt;
+        &lt;td&gt;Limit of volume IOPS.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;int64&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+     &lt;tr&gt;
+        &lt;td&gt;&amp;emsp;&amp;emsp;limit_bw_in_mbps&lt;/td&gt;
+        &lt;td&gt;Limit of volume network bandwidth.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;int64&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;br&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&amp;emsp;&amp;emsp;access_mode&lt;/td&gt;
+        &lt;td&gt;Define the access mode for all mappings of the volume.&lt;/td&gt;
+        &lt;td&gt;Optional And Computed&lt;/td&gt;
+        &lt;td&gt;string&lt;/td&gt;
+        &lt;td&gt;ReadOnly&lt;/td&gt;
+        &lt;td&gt;&lt;ul&gt;
+        &lt;li&gt;ReadOnly&lt;/li&gt;
+        &lt;li&gt;ReadWrite&lt;/li&gt;
+        &lt;li&gt;NoAccess&lt;/li&gt;
+        &lt;/ul&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;examples-5&#34;&gt;Examples&lt;/h3&gt;
+&lt;pre&gt;
+    &lt;code&gt;
+        resource &#34;powerflex_snapshot&#34; &#34;snapshots-create-access-mode-sdc-map&#34; {
+            name = &#34;snapshots-create-epsilon&#34;
+            volume_id = &#34;4577c84000000120&#34;
+            access_mode = &#34;ReadWrite&#34;
+            size = 16
+            capacity_unit = &#34;GB&#34;
+            remove_mode = &#34;INCLUDING_DESCENDANTS&#34;
+            sdc_list = [
+                {	
+                    sdc_id = &#34;c423b09900000004&#34;
+                    limit_iops = 150
+                    limit_bw_in_mbps = 20
+                    access_mode = &#34;ReadWrite&#34;
+                },
+            ]
+        }
+    &lt;/code&gt;
+&lt;/pre&gt;
+&lt;h3 id=&#34;examples-6&#34;&gt;Examples&lt;/h3&gt;
+&lt;pre&gt;
+    &lt;code&gt;
+        resource &#34;powerflex_snapshot&#34; &#34;snapshots-create-access-mode-sdc-map&#34; {
+            name = &#34;snapshots-create-epsilon&#34;
+            volume_id = &#34;4577c84000000120&#34;
+            access_mode = &#34;ReadWrite&#34;
+            size = 16
+            capacity_unit = &#34;GB&#34;
+            remove_mode = &#34;INCLUDING_DESCENDANTS&#34;
+            sdc_list = [
+                {	
+                    sdc_id = &#34;c423b09900000004&#34;
+                    limit_iops = 150
+                    limit_bw_in_mbps = 20
+                    access_mode = &#34;ReadWrite&#34;
+                },
+            ]
+        }
+    &lt;/code&gt;
+&lt;/pre&gt;
+&lt;h3 id=&#34;notes-3&#34;&gt;Notes&lt;/h3&gt;
+&lt;ul&gt;
+        &lt;li&gt;Either volume_id or volume_name is required in order to create / modify snapshot.&lt;/li&gt;
+        &lt;li&gt; Size of the volume should be a multiple of 8.&lt;/li&gt;
+        &lt;li&gt; specify 0 for unlimited iops..&lt;/li&gt;
+        &lt;li&gt; To set no limit over bandwidth, 0 is to be passed.&lt;/li&gt;
+        &lt;li&gt; Specify either sdc_name or sdc_id.&lt;/li&gt;
+ &lt;/ul&gt;
+      </description>
+    </item>
+    
   </channel>
 </rss>

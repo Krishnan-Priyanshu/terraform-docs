@@ -43,5 +43,31 @@
       </description>
     </item>
     
+    <item>
+      <title>Docs: Support</title>
+      <link>https://krunal-thakkar.github.io/terraform-docs/docs/storage/support/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://krunal-thakkar.github.io/terraform-docs/docs/storage/support/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Licensing</title>
+      <link>https://krunal-thakkar.github.io/terraform-docs/docs/storage/licensing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://krunal-thakkar.github.io/terraform-docs/docs/storage/licensing/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
   </channel>
 </rss>
