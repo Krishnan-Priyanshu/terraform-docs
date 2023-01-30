@@ -16,11 +16,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://krunal-thakkar.github.io/terraform-docs/docs/storage/platforms/powerflex/product_guide/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2023-01-30T00:37:26-05:00" /><meta property="og:site_name" content="Dell Technologies" />
+<meta property="article:modified_time" content="2023-01-30T08:17:25-05:00" /><meta property="og:site_name" content="Dell Technologies" />
 <meta itemprop="name" content="Product Guide">
 <meta itemprop="description" content="Documentation for PowerFlex">
-<meta itemprop="dateModified" content="2023-01-30T00:37:26-05:00" />
-<meta itemprop="wordCount" content="5309">
+<meta itemprop="dateModified" content="2023-01-30T08:17:25-05:00" />
+<meta itemprop="wordCount" content="5356">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Product Guide"/>
 <meta name="twitter:description" content="Documentation for PowerFlex"/>
@@ -73,7 +73,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/terraform-docs/offline-search-index.c13e84e2e60b8178d657240346239712.json"
+  data-offline-search-index-json-src="/terraform-docs/offline-search-index.6991f7ce3ea0436519e45b728e11a58b.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -95,7 +95,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/terraform-docs/offline-search-index.c13e84e2e60b8178d657240346239712.json"
+  data-offline-search-index-json-src="/terraform-docs/offline-search-index.6991f7ce3ea0436519e45b728e11a58b.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -1324,7 +1324,7 @@
         <td><br></td>
     </tr>
      <tr>
-        <td>&emsp;&emsp;is_on_vmware</td>
+        <td>is_on_vmware</td>
         <td>Is on vmware state of SDS.</td>
         <td>Computed</td>
         <td>bool</td>
@@ -1349,7 +1349,7 @@
     </tr>
     <tr>
         <td>num_of_io_buffers</td>
-        <td>Number of io buffers of SDS.</td>
+        <td>Number of I/O buffers of SDS.</td>
         <td>Computed</td>
         <td>int64</td>
         <td><br></td>
@@ -1368,31 +1368,34 @@
 <h3 id="examples-5">Examples</h3>
 <pre>
     <code>
-        resource "powerflex_sds" "sds" {
-	      name = "Tf_SDS_01"
-	      ip_list = [
-		    {
-			ip = "10.247.100.232"
-			role = "all"
-		    },
-		    {
-			ip = "10.10.10.1"
-			role = "sdcOnly"
-		    }
-	      ]
-	      performance_profile = "Compact"
-	      rmcache_enabled = true
-	      rmcache_size_in_mb = 156
-	      rfcache_enabled = true
-	      drl_mode = "NonVolatile"
-	      protection_domain_id = "4eeb304600000000"
+resource "powerflex_sds" "sds" {
+    name = "Tf_SDS_01"
+    ip_list = [
+        {
+            ip = "10.247.100.232"
+            role = "all"
+        },
+        {
+            ip = "10.10.10.1"
+            role = "sdcOnly"
+        }
+    ]
+    performance_profile = "Compact"
+    rmcache_enabled = true
+    rmcache_size_in_mb = 156
+    rfcache_enabled = true
+    drl_mode = "NonVolatile"
+    protection_domain_id = "4eeb304600000000"
 }
     </code>
 </pre>
 <h3 id="notes-3">Notes</h3>
 <ul>
         <li>Either protection_domain_id or protection_domain_name is required in order to create / modify SDS.</li>
- </ul>
+        <li><b>Note</b>: SDS creation or update is not atomic. In case of partially completed operations, terraform can mark the resource as tainted.
+One can manually remove the taint and try applying the configuration (after making necessary adjustments).
+<br><b>Warning</b>: If the taint is not removed, terraform will destroy and recreate the resource. </li>
+</ul>
 <h2 id="sdc-datasource">SDC Datasource</h2>
 <p>Manage SDCs on Dell EMC PowerFlex</p>
 <h3 id="synopsis-5">Synopsis</h3>
@@ -2345,23 +2348,22 @@
     </tbody>
 </table>
 <h3 id="examples-7">Examples</h3>
+<h4 id="get-protection-domain-details-by-id">Get protection domain details by id</h4>
 <pre>
-    <code>
-    # Get protection domain details by id
-        data "powerflex_protection_domain" "pd1" {						
-		id = "4eeb304600000000"
-	}
-
-    # Get protection domain details by name
-        data "powerflex_protection_domain" "pd2" {			
-		name = "domain1"
-	}
-
-    #Get all protection domains
-       data "powerflex_protection_domain" "pd3" {						
-	}
+data "powerflex_protection_domain" "pd1" {						
+    id = "4eeb304600000000"
 }
-    </code>
+</pre>
+<h4 id="get-protection-domain-details-by-name">Get protection domain details by name</h4>
+<pre>
+data "powerflex_protection_domain" "pd2" {			
+    name = "domain1"
+}
+</pre>
+<h4 id="get-all-protection-domains">Get all protection domains</h4>
+<pre>
+data "powerflex_protection_domain" "pd3" {						
+}
 </pre>
 <h3 id="notes-5">Notes</h3>
 <ul>
