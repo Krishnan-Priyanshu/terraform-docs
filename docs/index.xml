@@ -61,7 +61,92 @@
       <description>
         
         
-        
+        &lt;h1 id=&#34;terraform-provider-for-dell-technologies-powerflex&#34;&gt;Terraform Provider for Dell Technologies PowerFlex&lt;/h1&gt;
+&lt;p&gt;The Terraform Provider for Dell Technologies (Dell) PowerFlex allows Data Center and IT administrators to use Hashicorp Terraform to automate and orchestrate the provisioning and management of Dell PowerFlex storage systems.&lt;/p&gt;
+&lt;p&gt;The Terraform Provider can be used to manage SDCs, volumes, snapshots, snapshot-policies, storage pools, SDSs and protection domains.&lt;/p&gt;
+&lt;h2 id=&#34;table-of-contents&#34;&gt;Table of contents&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#license&#34;&gt;License&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#prerequisites&#34;&gt;Prerequisites&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#list-of-datasources-in-terraform-provider-for-dell-powerflex&#34;&gt;List of DataSources in Terraform Provider for Dell PowerFlex&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#list-of-resources-in-terraform-provider-for-dell-powerflex&#34;&gt;List of Resources in Terraform Provider for Dell PowerFlex&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#releasing-maintenance-and-deprecation&#34;&gt;Releasing, Maintenance and Deprecation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;license&#34;&gt;License&lt;/h2&gt;
+&lt;p&gt;The Terraform Provide for PowerFlex is released and licensed under the MPL-2.0 license. See &lt;a href=&#34;https://github.com/dell/terraform-provider-powerflex/blob/main/LICENSE&#34;&gt;LICENSE&lt;/a&gt; for the full terms.&lt;/p&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;Terraform Provider&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;PowerFlex/VxFlex OS Version&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;OS&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Terraform&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Golang&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Terraform Plugin Framework version&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;v1.0.0&lt;/td&gt;
+&lt;td&gt;3.6&lt;/td&gt;
+&lt;td&gt;ubuntu22.04 &lt;br&gt; &lt;br&gt; rhel8.x &lt;br&gt; rhel7.x&lt;/td&gt;
+&lt;td&gt;1.3.2 &lt;br&gt; 1.2.9 &lt;br&gt; 1.3.2 &lt;br&gt; 1.2.9 &lt;br&gt;&lt;/td&gt;
+&lt;td&gt;1.19.x&lt;/td&gt;
+&lt;td&gt;1.0.1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;list-of-datasources-in-terraform-provider-for-dell-powerflex&#34;&gt;List of DataSources in Terraform Provider for Dell PowerFlex&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SDC&lt;/li&gt;
+&lt;li&gt;Storage pool&lt;/li&gt;
+&lt;li&gt;Volume&lt;/li&gt;
+&lt;li&gt;SDS&lt;/li&gt;
+&lt;li&gt;Protection Domain&lt;/li&gt;
+&lt;li&gt;Snapshot Policy&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;list-of-resources-in-terraform-provider-for-dell-powerflex&#34;&gt;List of Resources in Terraform Provider for Dell PowerFlex&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;SDC&lt;/li&gt;
+&lt;li&gt;Storage pool&lt;/li&gt;
+&lt;li&gt;Volume&lt;/li&gt;
+&lt;li&gt;SDS&lt;/li&gt;
+&lt;li&gt;Snapshot&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;installation-of-terraform-provider-for-dell-powerflex&#34;&gt;Installation of Terraform Provider for Dell PowerFlex&lt;/h2&gt;
+&lt;h2 id=&#34;installation-from-public-repository&#34;&gt;Installation from public repository&lt;/h2&gt;
+&lt;p&gt;The provider will be fetched from the public repository and installed by terraform automatically.
+Create a file called &lt;code&gt;main.tf&lt;/code&gt; in your workspace with the following contents&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-terraform&#34; data-lang=&#34;terraform&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000&#34;&gt;terraform&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#000&#34;&gt;required_providers&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#c4a000&#34;&gt;powerflex&lt;/span&gt; = &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#c4a000&#34;&gt;version&lt;/span&gt; = &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;0.0.1&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#c4a000&#34;&gt;source&lt;/span&gt;  = &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;registry.terraform.io/dell/powerflex&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then, in that workspace, run&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;terraform init
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;installation-from-source-code&#34;&gt;Installation from source code&lt;/h2&gt;
+&lt;p&gt;Dependencies: Go 1.19.x, make
+Run&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;git clone https://github.com/dell/terraform-provider-powerflex.git
+cd terraform-provider-powerflex
+make install
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Then follow &lt;a href=&#34;#installation-from-public-repository&#34;&gt;installation from public repo&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ssl-certificate-verification&#34;&gt;SSL Certificate Verification&lt;/h2&gt;
+&lt;p&gt;For SSL verifcation on RHEL, below steps can be performed:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Copy the CA certificate to the &lt;code&gt;/etc/pki/ca-trust/source/anchors&lt;/code&gt; path of the host by any external means.&lt;/li&gt;
+&lt;li&gt;Import the SSL certificate to host by running&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;update-ca-trust extract
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;releasing-maintenance-and-deprecation&#34;&gt;Releasing, Maintenance and Deprecation&lt;/h2&gt;
+&lt;p&gt;Terraform Provider for Dell Technnologies PowerFlex follows &lt;a href=&#34;https://semver.org/&#34;&gt;Semantic Versioning&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;New version will be release regularly if significant changes (bug fix or new feature) are made in the provider.&lt;/p&gt;
+&lt;p&gt;Released code versions are located on tags with names of the form &amp;ldquo;vx.y.z&amp;rdquo; where x.y.z corresponds to the version number.&lt;/p&gt;
+
       </description>
     </item>
     
